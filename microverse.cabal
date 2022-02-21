@@ -31,17 +31,7 @@ common common-options
 library
   import:          common-options
   hs-source-dirs:  src
-  exposed-modules: Lib
-  build-depends:
-    , containers
-    , mtl
-
-executable microverse-exe
-  import:         common-options
-  hs-source-dirs: app
-  main-is:        Main.hs
-  build-depends:  microverse
-  ghc-options:    -threaded -rtsopts -with-rtsopts=-N
+  exposed-modules: Universe
 
 test-suite microverse-test
   import:         common-options
@@ -53,16 +43,5 @@ test-suite microverse-test
     , HUnit
     , microverse
     , QuickCheck
-
-  ghc-options:    -threaded -rtsopts -with-rtsopts=-N
-
-benchmark microverse-bench
-  import:         common-options
-  type:           exitcode-stdio-1.0
-  hs-source-dirs: bench
-  main-is:        Main.hs
-  build-depends:
-    , criterion
-    , microverse
 
   ghc-options:    -threaded -rtsopts -with-rtsopts=-N
